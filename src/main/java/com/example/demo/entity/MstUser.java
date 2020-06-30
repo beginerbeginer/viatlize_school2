@@ -1,8 +1,13 @@
 package com.example.demo.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,24 +33,29 @@ public class MstUser implements Serializable {
    * 社員名
    */
   @Column(name = "user_name")
+  @NotNull
   private String userName;
 
   /**
    * 社員コード
    */
   @Column(name = "user_code")
+  @NotNull
   private Integer userCode;
 
   /**
    * パスワード
    */
   @Column(name = "password")
+  @NotNull
+  @Size(min = 4)
   private String password;
 
   /**
    * ステータス
    */
   @Column(name = "status")
+  @NotNull
   private Integer status;
 
   /**
@@ -81,7 +91,7 @@ public class MstUser implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name = "insert_date", updatable=false)
+  @Column(name = "insert_date", updatable = false)
   private Date insertDate;
 
   /**

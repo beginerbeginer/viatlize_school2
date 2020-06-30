@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -37,13 +39,16 @@ public class MstFee implements Serializable {
    * 手数料額
    */
   @Column(name = "fee_price")
+  @Null
   private Integer feePrice;
 
   /**
    * 銀行コード
    */
   @Column(name = "bank_code")
+  @NotNull
   private String bankCode;
+
   /**
    * 登録者
    */
@@ -59,7 +64,7 @@ public class MstFee implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name = "insert_date", updatable=false)
+  @Column(name = "insert_date", updatable = false)
   private Date insertDate;
 
   /**
@@ -81,6 +86,7 @@ public class MstFee implements Serializable {
 
   public void addObject(String column, String column1) {
   }
+
   public void setUpdateId(int i) {
   }
 }
