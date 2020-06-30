@@ -1,8 +1,12 @@
 package com.example.demo.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,18 +32,21 @@ public class MstUser implements Serializable {
    * 社員名
    */
   @Column(name = "user_name")
+  @NotBlank
   private String userName;
 
   /**
    * 社員コード
    */
   @Column(name = "user_code")
+  @NotBlank
   private Integer userCode;
 
   /**
    * パスワード
    */
   @Column(name = "password")
+  @NotBlank
   private String password;
 
   /**
