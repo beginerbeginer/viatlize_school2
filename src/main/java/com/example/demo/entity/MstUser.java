@@ -39,7 +39,6 @@ public class MstUser implements Serializable {
    * 社員コード
    */
   @Column(name = "user_code")
-  @NotBlank
   private Integer userCode;
 
   /**
