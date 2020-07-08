@@ -50,7 +50,9 @@
       <div th:replace="commons/page :: page"></div>
     </div>
     <div class="col-sm-2">
-      <form id="csvform" method="get" th:action="@{/transaction/download/csv}">
+      <form id="csvform" method="get" th:action="@{/transaction/download/csv}" th:object="${searchForm}">
+        <input type="hidden" name="id" th:value="${searchForm.getId()}"/>
+        <input type="hidden" name="accountNumber" th:value="${searchForm.getAccountNumber()}"/>
         <input type="hidden" name="filename"/>
         <button class="btn btn-success btn-sm" type="submit">ダウンロード</button>
       </form>
@@ -62,9 +64,7 @@
         <th>口座番号</th>
         <th>振込先口座番号</th>
         <th>種別</th>
-        <th>保留フラグ</th>
         <th>取引金額</th>
-        <th>手数料ID</th>
         <th>取引後残高</th>
         <th>作成者</th>
         <th>作成日</th>
@@ -75,11 +75,9 @@
         <td class="center" th:text="*{id}"></td>
         <td class="center" th:text="*{accountNumber}"></td>
         <td class="center" th:text="*{payAccountNumber}"></td>
-        <td class="center" th:text="*{type}"></td>
-        <td class="center" th:text="*{poolFlag}"></td>
-        <td class="center" th:text="*{amount}"></td>
-        <td class="center" th:text="*{feeId}"></td>
-        <td class="center" th:text="*{balance}"></td>
+        <td class="center" th:text="*{stringType}"></td>
+        <td class="center" th:text="*{amount} + '円'"></td>
+        <td class="center" th:text="*{balance} + '円'"></td>
         <td th:text="*{insertUserId}"></td>
         <td class="center" th:text="${#dates.format(transaction.insertDate, 'yyyy/MM/dd')}"></td>
       </tr>
