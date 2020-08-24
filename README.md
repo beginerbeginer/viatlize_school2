@@ -31,7 +31,7 @@
 
 # Minimal Example
 
-![Minimal Example](resources/file-0.png)
+![Minimal Example](https://gyazo.com/fb055f78a469f329f331c775b1e0fe5f)
 
 # Contributors
 - [beginerbeginer](https://github.com/beginerbeginer)
