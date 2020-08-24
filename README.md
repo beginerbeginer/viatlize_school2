@@ -8,14 +8,14 @@
 # Tags
 `bag` `fix`
 
-# Short Description
+# Short Description（概要）
 - JavaフレームワークSpringbootを用いた銀行アプリ
 
-# Advantages
+# Advantages（学べること）
 - Javaのフレームワークを用いたアプリの作成方法
 - 簡単なcrudの実装方法
 
-# Installation
+# Installation（環境構築方法）
 1. https://github.com/beginerbeginer/vitalize_school2　
 からclone（cloneしたディレクトリは覚えておくこと）
 1. intellijまたはeclipseを開く
