@@ -1,0 +1,36 @@
+server:
+  port: 8081 # ポート番号の指定
+
+spring:
+  datasource: # アプリ起動時に毎回実行(仮）
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    password: password
+    sql-script-encoding: utf-8
+    url: jdbc:mysql://localhost:3306/vitalizeBank?serverTimezone=JST
+    username: root
+
+  flyway: # Flywayマイグレーション
+    baseline-on-migrate: true # すでに存在するデータベースにFlywayを適用する為の設定
+    baselineVersion: 6.5.1 # ベースラインのバージョンを指定
+
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging: # バインドパラメータ出力
+  level:
+    org:
+      hibernate:
+        SQL: debug # SQLログ出力
+        type:
+          EnumType: trace
+          descriptor:
+            sql:
+              BasicBinder: trace
+scheduler:
+  cron: 0 0 8 * * *
+  today: 0 * * * * *
