@@ -1,3 +1,7 @@
+#information
+チャンネル「エンジニアスクール」を参照
+
+
 # vitalize_school2
 
 [![Github issues](https://img.shields.io/github/issues/beginerbeginer/vitalize_school2)](https://github.com/beginerbeginer/vitalize_school2/issues)
